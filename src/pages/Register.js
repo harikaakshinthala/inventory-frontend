@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UploadImage from "../components/UploadImage";
+import { API } from "../global"
 
 function Register() {
   const [form, setForm] = useState({
@@ -21,7 +22,7 @@ function Register() {
 
   // Register User
   const registerUser = () => {
-    fetch("http://localhost:4000/api/register", {
+    fetch(`${API}/api/register`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
